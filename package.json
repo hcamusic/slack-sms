@@ -1,0 +1,23 @@
+{
+  "name": "slack-sms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hcamusic/slack-sms.git",
+  "author": "Michael Barlock",
+  "license": "MIT",
+  "scripts": {
+    "lint": "yarn eslint && yarn type",
+    "type": "tsc --noEmit",
+    "fmt": "pre-commit run --all-files && yarn eslint --fix"
+  },
+  "devDependencies": {
+    "@slack-wrench/eslint-config": "^1.2.0",
+    "eslint": "^8.11.0",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.10.0",
+    "twilio": "^3.75.1"
+  }
+}
