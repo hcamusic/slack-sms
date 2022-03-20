@@ -1,0 +1,21 @@
+service: slack-sms
+frameworkVersion: '3'
+provider:
+  name: aws
+  runtime: nodejs14.x
+  environment:
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+    NOTIFICATION_CHANNEL: ${env:NOTIFICATION_CHANNEL}
+    TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
+    TWILIO_AUTH_TOKEN: ${env:TWILIO_AUTH_TOKEN}
+    TWILIO_NUMBER: ${env:TWILIO_NUMBER}
+    HARMONYSITE_USERNAME: ${env:HARMONYSITE_USERNAME}
+    HARMONYSITE_PASSWORD: ${env:HARMONYSITE_PASSWORD}
+functions:
+  slack:
+    handler: dist/lambda.handler
+    events:
+      - http:
+          path: slack/events
+          method: post

@@ -11,3 +11,5 @@
 !.yarn/versions
 
 node_modules/
+dist/
+.serverless
