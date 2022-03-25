@@ -1,5 +1,7 @@
 service: slack-sms
 frameworkVersion: '3'
+package:
+  artifact: ./function.zip
 provider:
   name: aws
   runtime: nodejs14.x
@@ -14,7 +16,7 @@ provider:
     HARMONYSITE_PASSWORD: ${env:HARMONYSITE_PASSWORD}
 functions:
   slack:
-    handler: dist/lambda.handler
+    handler: dist/index.handler
     events:
       - http:
           path: slack/events

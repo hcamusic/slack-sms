@@ -786,6 +786,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/ncc@npm:^0.33.3":
+  version: 0.33.3
+  resolution: "@vercel/ncc@npm:0.33.3"
+  dependencies:
+    node-gyp: latest
+  bin:
+    ncc: dist/ncc/cli.js
+  checksum: 0dd73aae0df395524eac2086e23305672d907fb184a6d85249e39a6246ee1c36848b38334d279b5f8b755d3e8ba32a680043034acd3c0f28d7ec38915335509d
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -6022,6 +6033,7 @@ __metadata:
     "@slack/bolt": ^3.10.0
     "@types/lodash": ^4
     "@types/serverless": ^3
+    "@vercel/ncc": ^0.33.3
     awesome-phonenumber: ^2.70.0
     eslint: ^8.11.0
     harmonysite: ^2.0.1

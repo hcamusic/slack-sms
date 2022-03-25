@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon src/index.ts",
     "lint": "yarn eslint && yarn type",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && ncc build src/lambda.ts -o dist -s && zip -r function.zip dist/*",
     "deploy": "yarn build && serverless deploy",
     "type": "tsc --noEmit",
     "fmt": "pre-commit run --all-files && yarn eslint --fix"
@@ -26,6 +26,7 @@
   "dependencies": {
     "@slack-wrench/blocks": "^3.1.2",
     "@slack/bolt": "^3.10.0",
+    "@vercel/ncc": "^0.33.3",
     "awesome-phonenumber": "^2.70.0",
     "harmonysite": "^2.0.1",
     "lodash": "^4.17.21",
